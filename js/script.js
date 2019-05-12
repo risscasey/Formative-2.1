@@ -1,8 +1,12 @@
+console.log('JS Loaded');
+
 //function: find max value of a number list
-function findMax(aNums) {
+
+
+function findMax (aNums) {
     var iMax = aNums[0];
 
-    for(var iCount=0; iCount<aNums.length; iCount++) {
+    for(var iCount=0; iCount < aNums.length; iCount++) {
         if(iMax > aNums[iCount]) {
             iMax = aNums[iCount];
         }
@@ -11,19 +15,26 @@ function findMax(aNums) {
     return iMax;
 }
 
+
 //-----------------------------------------
 
 //Input: Get 3 grades for each student
+
+
 var iSize = parseInt(prompt('Class size?'));
 var aGradesPhysics = [];
 var aGradesChemistry = [];
-var aGradesBiology;
+var aGradesBiology = [];
+
+
 
 //ParseInt does the same as Number but removes anything other than a number from the value if input
 //Example parseInt(abc123) will give you 123
-for(var iCount=0; iCount<iSize; iCount++) {
+
+
+for (var iCount=0; iCount < iSize; iCount++) {
     var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
-    GradesPhysics.push(iGradePhysics);
+    aGradesPhysics.push(iGradePhysics);
 
     var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
     aGradesChemistry.push(iGradeChemistry);
@@ -32,16 +43,24 @@ for(var iCount=0; iCount<iSize; iCount++) {
     aGradesBiology.push(iGradeBiology);
 }
 
+
+
 // processing: calculate average grade for each student and find top grade in class
+
+
 var aAverageGrades = [];
 
 for(var iCount=0; iCount<iSize; iCount++) {
     var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / aGradesPhysics.length;
     aAverageGrades.push(fAverage);
 }
-var iTopGrade = findMaxs(aAverageGrades);
+var iTopGrade = findMax(aAverageGrades);
+
+
 
 //output: list result for each student and top grade
+
+
 
 
 for(var iCount=1; iCount<aAverageGrades.length; iCount++) {
@@ -55,8 +74,8 @@ for(var iCount=1; iCount<aAverageGrades.length; iCount++) {
 
     } else {
 
-        document.write('Student '+(iCount+1)': Pass with Distinction'+'<br>');
+        document.write('Student '+(iCount+1) + ': Pass with Distinction'+'<br>');
     }
 }
 
-document.write('<h1>The top overall grade is '+iTopgrade+'</h1>');
+document.write('<h1>The top overall grade is '+ iTopGrade +'</h1>');
